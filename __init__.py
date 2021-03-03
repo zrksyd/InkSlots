@@ -2,7 +2,7 @@ import os
 from tkinter import *
 from tkinter import filedialog
 
-from lib import XMLStuff
+from lib import PRC
 from lib import colorCorrection
 import re
 colorHexRegex = '^([A-Fa-f0-9]{6})'
@@ -83,7 +83,7 @@ def inputSpawn(index):
     else:
         entries[index].grid_remove()
         colorSquares[index].grid_remove()
-        
+
 checkBoxes = []
 for i in range(ALTS):
     text = 'c' + format(i, '02d')
@@ -98,10 +98,10 @@ for i in range(ALTS):
     checkBoxes[i].grid(row=i,column=0)
 
 def importColors():
-    importedColors = XMLStuff.effectPRCRead2("..\input\effect.prc")
+    importedColors = PRC.effectPRCRead2("..\input\effect.prc")
     gammaCorrected = colorCorrection.gammaCorrect(importedColors[0:ALTS], 1.0/2.2)
     for i in range(ALTS):
-        rgb = '#%02x%02x%02x' % gammaCorrected[i] 
+        rgb = '#%02x%02x%02x' % gammaCorrected[i]
         print(rgb)
         colorSquares[i].config(bg=rgb)
 
@@ -122,9 +122,9 @@ def exportColors():
                 colors[i] = None
             gammaCorrected = colorCorrection.gammaCorrect(colors, 2.2)
             #print(gammaCorrected)
-            XMLStuff.effectPRCWrite2("..\input\effect.prc", gammaCorrected)
-            
-            
+            PRC.effectPRCWrite2("..\input\effect.prc", gammaCorrected)
+
+
 
 menu = Menu(root)
 root.config(menu=menu)
