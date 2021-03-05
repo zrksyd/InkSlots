@@ -13,6 +13,19 @@ def gammaCorrect(colors, gamma):
         gammaCorrected.append(tuple(color))
     return gammaCorrected
 
+def exposureCorrect(colors, factor):
+    exposureCorrected = []
+    for i in colors:
+        if i == None:
+            exposureCorrected.append(None)
+            continue
+        color = []
+        for j in i:
+            j = min(256, j * (2 ** factor))
+            color.append(j)
+        exposureCorrected.append(tuple(color))
+    return exposureCorrected
+
 def addHSL(colors, factor, index):
     colorCorrected = []
     for i in colors:
