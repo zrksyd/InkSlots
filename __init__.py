@@ -10,44 +10,6 @@ colorHexRegex = '^([A-Fa-f0-9]{6})'
 ALTS = 8
 colors = [None] * ALTS
 
-#BFLAN distance between frames = 0xC
-#BFLAN distance between RGB = 0xC0
-#BFLAN distance between elements until guage_max = 0x278
-#BFLAN emp_bg_01 <--> guage_max = 0x284
-#BFLAN guage_max black <--> white = 0x240 = 0xC0 * 3
-#BFLAN after guage_max white = 0x278
-
-#BFLAN bg_grd red frame 00 offset: 0x0D4, length 0x4, little-endian float
-#BFLAN bg_grd red frame 01 offset: 0x0E0, length 0x4, little-endian float
-#BFLAN bg_grd red frame 02 offset: 0x0EC, length 0x4, little-endian float
-#BFLAN bg_grd red frame 03 offset: 0x0F8, length 0x4, little-endian float
-#BFLAN bg_grd red frame 04 offset: 0x104, length 0x4, little-endian float
-#BFLAN bg_grd red frame 05 offset: 0x110, length 0x4, little-endian float
-#BFLAN bg_grd red frame 06 offset: 0x11C, length 0x4, little-endian float
-#BFLAN bg_grd red frame 07 offset: 0x128, length 0x4, little-endian float
-#BFLAN bg_grd red frame 08 offset: 0x134, length 0x4, little-endian float
-#BFLAN bg_grd red frame 09 offset: 0x140, length 0x4, little-endian float
-#BFLAN bg_grd red frame 10 offset: 0x14C, length 0x4, little-endian float
-#BFLAN bg_grd red frame 11 offset: 0x158, length 0x4, little-endian float
-#BFLAN bg_grd red frame 12 offset: 0x164, length 0x4, little-endian float
-#BFLAN bg_grd red frame 13 offset: 0x170, length 0x4, little-endian float
-#BFLAN bg_grd red frame 14 offset: 0x17C, length 0x4, little-endian float
-
-#BFLAN bg_grd green frame 00 offset: 0x194, length 0x4, little-endian float
-#BFLAN bg_grd green frame 01 offset: 0x1A0, length 0x4, little-endian float
-
-#BFLAN bg_grd blue frame 00 offset: 0x254, length 0x4, little-endian float
-#BFLAN bg_grd blue frame 01 offset: 0x260, length 0x4, little-endian float
-
-#BFLAN csr red frame 00 offset: 0x34C, length 0x4, little-endian float
-#BFLAN csr red frame 01 offset: 0x358, length 0x4, little-endian float
-
-#BFLAN csr green frame 00 offset: 0x40C, length 0x4, little-endian float
-
-#BFLAN csr blue frame 00 offset: 0x4CC, length 0x4, little-endian float
-
-#BFLAN guage red frame 00 offset: 0x5C4
-
 root = Tk()
 root.title("InkSlots")
 root.geometry("280x200")
